@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | المحاسب الاستشاري - تواصل مع خبرائنا</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet"> -->
+    <style>
+        /* جميع الأنماط من صفحة من نحن تبقى كما هي */
+        :root {
+            --primary: #1e40af;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gold: #d4af37;
+        }
+        
+        body {
+            /* font-family: 'Almarai', sans-serif; */
+            background-color: var(--light);
+            line-height: 1.8;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0ea5e9 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+        }
+        
+        .section-padding {
+            padding: 6rem 0;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #1e40af, #0ea5e9);
+            /* -webkit-background-clip: text; */
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gold-text {
+            background: linear-gradient(to right, #d4af37, #fbbf24);
+            /* -webkit-background-clip: text; */
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-image {
+            border-radius: 24px;
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .floating {
+            animation: floating 4s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, -20px); }
+            100% { transform: translate(0, 0px); }
+        }
+        
+        .sticky-nav {
+            backdrop-filter: blur(16px);
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+        }
+        
+        .stat-card:hover {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            transform: scale(1.05);
+        }
+        
+        .service-icon {
+            transition: all 0.4s ease;
+        }
+        
+        .card-hover:hover .service-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .feature-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .process-step {
+            position: relative;
+            padding-right: 30px;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .process-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-card {
+            transition: all 0.4s ease;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.popular:before {
+            content: 'الأكثر طلباً';
+            position: absolute;
+            top: 20px;
+            left: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(-45deg);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(-5px);
+        }
+
+        /* تحسينات جديدة */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 64, 175, 0.85) 50%, rgba(14, 165, 233, 0.8) 100%), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .scroll-animation.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid var(--gold);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--gold); }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(30, 64, 175, 0.8) 50%, rgba(14, 165, 233, 0.75) 100%);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(30, 64, 175, 0.3);
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(30, 64, 175, 0.5);
+        }
+        
+        .counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+
+        /* أنماط خاصة بصفحة اتصل بنا */
+        .contact-info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+        
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 400px;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #374151;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 10px;
+            color: #6b7280;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body class="text-right">
+    <!-- شريط التنقل -->
+    <nav class="sticky-nav fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="gold-gradient text-white p-3 rounded-2xl shadow-lg glow">
+                        <i class="fas fa-balance-scale text-2xl"></i>
+                    </div>
+                    <div>
+                        <a href="index.html" class="text-2xl font-black text-gray-800 hover:text-blue-600 transition-colors duration-300">المحاسب<br><span class="gold-text">الاستشاري</span></a>
+                        <p class="text-xs text-gray-600 mt-1">مكتب محاسبي قانوني معتمد</p>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-10 space-x-reverse">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">الرئيسية</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">من نحن</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">خدماتنا</a>
+                    <a href="solutions.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">الحلول</a>
+                    <a href="cases.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">دراسات الحالة</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">المدونة</a>
+                    <a href="contact.html" class="btn-primary text-white px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-300 hover-lift">طلب استشارة</a>
+                </div>
+                
+                <!-- زر القائمة للموبايل -->
+                <div class="lg:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- القائمة المنسدلة للموبايل -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4 bg-white rounded-2xl mt-2 shadow-xl border border-gray-100">
+                <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">الرئيسية</a>
+                <a href="about.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">من نحن</a>
+                <a href="services.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">خدماتنا</a>
+                <a href="solutions.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">الحلول</a>
+                <a href="cases.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">دراسات الحالة</a>
+                <a href="blog.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">المدونة</a>
+                <a href="contact.html" class="block py-3 px-4 text-blue-600 font-bold bg-blue-50 rounded-lg mx-2 my-1">طلب استشارة</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم البطل لصفحة اتصل بنا -->
+    <section class="hero-section text-white pt-40 pb-32 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">اتصل <span class="gold-text">بنا</span></h1>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">نحن هنا للإجابة على استفساراتك وتقديم الاستشارات المحاسبية والمالية التي تحتاجها</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم معلومات الاتصال -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="contact-info-card scroll-animation">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-gray-800 mb-2">العنوان</h3>
+                            <p class="text-gray-600">الرياض، حي العليا<br>شارع الملك فهد<br>المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card scroll-animation" style="animation-delay: 0.1s;">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-gray-800 mb-2">هاتف</h3>
+                            <p class="text-gray-600">+966 11 123 4567<br>+966 55 123 4567</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card scroll-animation" style="animation-delay: 0.2s;">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-gray-800 mb-2">البريد الإلكتروني</h3>
+                            <p class="text-gray-600">info@accountant.com<br>support@accountant.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card scroll-animation" style="animation-delay: 0.3s;">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black text-gray-800 mb-2">ساعات العمل</h3>
+                            <p class="text-gray-600">الأحد - الخميس<br>8:00 ص - 6:00 م</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- نموذج الاتصال -->
+                <div class="contact-form scroll-animation">
+                    <h2 class="text-3xl font-black text-gray-800 mb-6 section-title">أرسل <span class="text-gradient">رسالة</span></h2>
+                    <p class="text-gray-600 mb-8">املأ النموذج أدناه وسنتصل بك في أقرب وقت ممكن</p>
+                    
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="name" class="form-label">الاسم الكامل</label>
+                                <input type="text" id="name" class="form-input" placeholder="أدخل اسمك الكامل" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">رقم الهاتف</label>
+                                <input type="tel" id="phone" class="form-input" placeholder="أدخل رقم هاتفك" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">البريد الإلكتروني</label>
+                            <input type="email" id="email" class="form-input" placeholder="أدخل بريدك الإلكتروني" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">نوع الخدمة المطلوبة</label>
+                            <select id="service" class="form-input" required>
+                                <option value="">اختر الخدمة المطلوبة</option>
+                                <option value="accounting">المحاسبة المالية</option>
+                                <option value="audit">المراجعة والتدقيق</option>
+                                <option value="tax">الاستشارات الضريبية</option>
+                                <option value="budget">إعداد الميزانيات</option>
+                                <option value="analysis">التحليل المالي</option>
+                                <option value="consulting">الاستشارات المالية</option>
+                                <option value="other">خدمة أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">الرسالة</label>
+                            <textarea id="message" class="form-input" rows="5" placeholder="أدخل رسالتك بالتفصيل" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary text-white w-full py-4 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300">
+                            <i class="fas fa-paper-plane ml-2"></i>
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- الخريطة -->
+                <div class="scroll-animation" style="animation-delay: 0.2s;">
+                    <h2 class="text-3xl font-black text-gray-800 mb-6 section-title">موقع<span class="text-gradient">نا</span></h2>
+                    <p class="text-gray-600 mb-6">يمكنك زيارة مكتبنا في العنوان التالي أو استخدام الخريطة للوصول إلينا</p>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.156179023902!2d46.67285931500184!3d24.740155384111374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee3a75e98e6d7%3A0x5a2f4b1b5f5f5f5f!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    
+                    <div class="mt-8 bg-blue-50 rounded-2xl p-6">
+                        <h3 class="text-xl font-black text-gray-800 mb-4">نصائح للزيارة</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                                يفضل تحديد موعد مسبق لضمان توفر المستشار المناسب
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                                احضر معك المستندات المالية ذات الصلة لاستشارة أكثر دقة
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                                مواقف السيارات متوفرة في المبنى مجاناً للعملاء
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-gray-800 mb-4 section-title">أسئلة <span class="text-gradient">شائعة</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">إجابات على أكثر الأسئلة التي تردنا من عملائنا</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="faq-item scroll-animation">
+                    <div class="faq-question">
+                        <span>ما هي مدة الاستشارة الأولية المجانية؟</span>
+                        <i class="fas fa-chevron-down text-blue-500"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>الاستشارة الأولية المجانية تستغرق عادةً 30 دقيقة، حيث نتعرف خلالها على احتياجاتك المالية ونحدد معاً أفضل طريقة لمساعدتك في تحقيق أهدافك.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-animation" style="animation-delay: 0.1s;">
+                    <div class="faq-question">
+                        <span>ما هي المستندات التي يجب إحضارها للاستشارة الأولى؟</span>
+                        <i class="fas fa-chevron-down text-blue-500"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ننصح بإحضار البيانات المالية للسنة الأخيرة، الإقرارات الضريبية، كشوف الحسابات البنكية، وأي مستندات أخرى ذات صلة بطبيعة عملك واستفسارك.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-animation" style="animation-delay: 0.2s;">
+                    <div class="faq-question">
+                        <span>هل تقدمون خدمات عن بُعد؟</span>
+                        <i class="fas fa-chevron-down text-blue-500"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نقدم جميع خدماتنا عن بُعد عبر منصات الاتصال المرئي والبريد الإلكتروني، مع ضمان نفس مستوى الجودة والاحترافية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-animation" style="animation-delay: 0.3s;">
+                    <div class="faq-question">
+                        <span>ما هي مدة تنفيذ المشروع المحاسبي النموذجي؟</span>
+                        <i class="fas fa-chevron-down text-blue-500"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>تختلف المدة حسب حجم المشروع وتعقيده، ولكن معظم المشاريع المحاسبية تستغرق ما بين 2-6 أسابيع. نقدم جدولاً زمنياً مفصلاً بعد دراسة متطلباتك.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item scroll-animation" style="animation-delay: 0.4s;">
+                    <div class="faq-question">
+                        <span>هل تتعاملون مع الشركات الصغيرة والناشئة؟</span>
+                        <i class="fas fa-chevron-down text-blue-500"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نقدم حزم خدمات مخصصة للشركات الصغيرة والناشئة بأسعار تنافسية، حيث نؤمن بأهمية دعم هذه الشركات في بداية طريقها.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم طلب استشارة -->
+    <section class="py-16 bg-gradient-to-r from-blue-800 to-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row justify-between items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0">
+                    <h2 class="text-4xl font-black mb-4">هل تحتاج إلى استشارة محاسبية فورية؟</h2>
+                    <p class="text-xl text-blue-100 max-w-2xl">لا تتردد في التواصل معنا، فريقنا من الخبراء جاهز لمساعدتك في حل جميع التحديات المالية والمحاسبية التي تواجهها.</p>
+                </div>
+                <div class="lg:w-1/2 flex flex-col sm:flex-row justify-center lg:justify-end space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+                    <a href="tel:+966551234567" class="btn-gold text-white px-10 py-5 rounded-2xl font-black text-xl inline-flex items-center justify-center hover-lift">
+                        <i class="fas fa-phone-alt ml-3"></i>
+                        اتصل بنا الآن
+                    </a>
+                    <a href="https://wa.me/966551234567" class="bg-green-500 text-white px-10 py-5 rounded-2xl font-black text-xl inline-flex items-center justify-center hover:bg-green-600 transition hover-lift">
+                        <i class="fab fa-whatsapp ml-3"></i>
+                        واتساب
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 space-x-reverse mb-6">
+                        <div class="gold-gradient text-white p-3 rounded-xl glow">
+                            <i class="fas fa-balance-scale text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-black">المحاسب</span><br>
+                            <span class="gold-text font-bold">الاستشاري</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">نقدم خدمات محاسبية ومالية متكاملة بجودة عالية واحترافية تامة لتلبية احتياجات عملائنا وتحقيق أهدافهم المالية.</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="bg-gray-800 text-gray-300 p-3 rounded-xl hover:bg-blue-600 hover:text-white transition hover-lift">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 text-gray-300 p-3 rounded-xl hover:bg-blue-600 hover:text-white transition hover-lift">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 text-gray-300 p-3 rounded-xl hover:bg-blue-600 hover:text-white transition hover-lift">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-black mb-6">روابط سريعة</h3>
+                    <ul class="space-y-4 footer-links">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">من نحن</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">خدماتنا</a></li>
+                        <li><a href="solutions.html" class="text-gray-400 hover:text-white transition">الحلول</a></li>
+                        <li><a href="cases.html" class="text-gray-400 hover:text-white transition">دراسات الحالة</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition">المدونة</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-black mb-6">خدماتنا</h3>
+                    <ul class="space-y-4 footer-links">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">المحاسبة المالية</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">المراجعة والتدقيق</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">الاستشارات الضريبية</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">إعداد الميزانيات</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">التحليل المالي</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">الاستشارات المالية</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-black mb-6">اتصل بنا</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-400 ml-3"></i>
+                            الرياض، المملكة العربية السعودية
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 ml-3"></i>
+                            +966 55 123 4567
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 ml-3"></i>
+                            info@accountant.com
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 bg-gray-800 rounded-2xl p-6 hover-lift">
+                        <h4 class="font-black mb-3">النشرة البريدية</h4>
+                        <p class="text-gray-400 text-sm mb-4">اشترك لتصلك آخر المقالات والنصائح</p>
+                        <div class="flex">
+                            <input type="email" placeholder="بريدك الإلكتروني" class="bg-gray-700 text-white rounded-r-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button class="bg-blue-600 text-white px-4 py-3 rounded-l-lg hover:bg-blue-700 transition">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>جميع الحقوق محفوظة &copy; 2023 المحاسب الاستشاري</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تفعيل القائمة المنسدلة للموبايل
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // تفعيل الأسئلة الشائعة
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // تأثيرات عند التمرير
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('sticky-nav');
+                } else {
+                    nav.classList.remove('sticky-nav');
+                }
+                
+                // تفعيل تأثيرات الظهور عند التمرير
+                const scrollElements = document.querySelectorAll('.scroll-animation');
+                scrollElements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('active');
+                    }
+                });
+            });
+            
+            // تفعيل نموذج الاتصال
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('شكراً لتواصلك معنا! سنرد على رسالتك في أقرب وقت ممكن.');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

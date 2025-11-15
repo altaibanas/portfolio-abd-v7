@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المحاسب الاستشاري | مكتب محاسبي قانوني معتمد - خدمات مراجعة و تدقيق مالي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet"> -->
+    <style>
+        :root {
+            --primary: #1e40af;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gold: #d4af37;
+        }
+        
+        body {
+            /* font-family: 'Almarai', sans-serif; */
+            background-color: var(--light);
+            line-height: 1.8;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0ea5e9 100%);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+        }
+        
+        .section-padding {
+            padding: 6rem 0;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #1e40af, #0ea5e9);
+            /* -webkit-background-clip: text; */
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gold-text {
+            background: linear-gradient(to right, #d4af37, #fbbf24);
+            /* -webkit-background-clip: text; */
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-image {
+            border-radius: 24px;
+            box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .floating {
+            animation: floating 4s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, -20px); }
+            100% { transform: translate(0, 0px); }
+        }
+        
+        .sticky-nav {
+            backdrop-filter: blur(16px);
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+        }
+        
+        .stat-card:hover {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            transform: scale(1.05);
+        }
+        
+        .service-icon {
+            transition: all 0.4s ease;
+        }
+        
+        .card-hover:hover .service-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, #d4af37 0%, #fbbf24 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .feature-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .process-step {
+            position: relative;
+            padding-right: 30px;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .process-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+        
+        .pricing-card {
+            transition: all 0.4s ease;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.popular:before {
+            content: 'الأكثر طلباً';
+            position: absolute;
+            top: 20px;
+            left: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(-45deg);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(-5px);
+        }
+
+        /* تحسينات جديدة */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 64, 175, 0.85) 50%, rgba(14, 165, 233, 0.8) 100%), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .scroll-animation.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid var(--gold);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--gold); }
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(30, 64, 175, 0.8) 50%, rgba(14, 165, 233, 0.75) 100%);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(30, 64, 175, 0.3);
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(30, 64, 175, 0.5);
+        }
+        
+        .counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .flip-card {
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="text-right">
+    <!-- شريط التنقل المحسن -->
+    <nav class="sticky-nav fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="gold-gradient text-white p-3 rounded-2xl shadow-lg glow">
+                        <i class="fas fa-balance-scale text-2xl"></i>
+                    </div>
+                    <div>
+                        <a href="index.html" class="text-2xl font-black text-gray-800 hover:text-blue-600 transition-colors duration-300">المحاسب<br><span class="gold-text">الاستشاري</span></a>
+                        <p class="text-xs text-gray-600 mt-1">مكتب محاسبي قانوني معتمد</p>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-10 space-x-reverse">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">الرئيسية</a>
+                    <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">من نحن</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">خدماتنا</a>
+                    <a href="solutions.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">الحلول</a>
+                    <a href="cases.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">دراسات الحالة</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 border-b-2 border-transparent hover:border-blue-600 pb-1">المدونة</a>
+                    <a href="contact.html" class="btn-primary text-white px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-300 hover-lift">طلب استشارة</a>
+                </div>
+                
+                <!-- زر القائمة للموبايل -->
+                <div class="lg:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- القائمة المنسدلة للموبايل -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4 bg-white rounded-2xl mt-2 shadow-xl border border-gray-100">
+                <a href="index.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">الرئيسية</a>
+                <a href="about.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">من نحن</a>
+                <a href="services.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">خدماتنا</a>
+                <a href="solutions.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">الحلول</a>
+                <a href="cases.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">دراسات الحالة</a>
+                <a href="blog.html" class="block py-3 px-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition rounded-lg mx-2 my-1">المدونة</a>
+                <a href="contact.html" class="block py-3 px-4 text-blue-600 font-bold bg-blue-50 rounded-lg mx-2 my-1">طلب استشارة</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم البطل المحسن -->
+    <section class="hero-section text-white pt-40 pb-32 overflow-hidden relative">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-20 h-20 bg-white rounded-full"></div>
+            <div class="absolute bottom-20 right-20 w-32 h-32 bg-white rounded-full"></div>
+            <div class="absolute top-1/3 left-1/4 w-16 h-16 bg-white rounded-full"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-16 lg:mb-0 scroll-animation">
+                    <div class="feature-badge glow">مكتب محاسبي معتمد منذ 2010</div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">الخبرة <span class="gold-text">المحاسبية</span> التي تستحقها شركتك</h1>
+                    <p class="text-xl text-blue-100 mb-8 max-w-2xl">نقدم حلولاً محاسبية واستشارية متكاملة تعزز من كفاءة أدائك المالي وتحقق أقصى استفادة من مواردك المالية وفقاً لأعلى معايير الجودة والاحترافية.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+                        <a href="contact.html" class="btn-gold text-white px-8 py-4 rounded-xl font-bold text-lg text-center hover-lift">طلب استشارة مجانية</a>
+                        <a href="services.html" class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 text-center hover-lift">استكشف خدماتنا</a>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-6 mt-12">
+                        <div class="flex items-center bg-white bg-opacity-10 p-3 rounded-2xl hover-lift">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-lg ml-3">
+                                <i class="fas fa-award text-yellow-300"></i>
+                            </div>
+                            <span>محاسبون قانونيون معتمدون</span>
+                        </div>
+                        <div class="flex items-center bg-white bg-opacity-10 p-3 rounded-2xl hover-lift">
+                            <div class="bg-white bg-opacity-20 p-2 rounded-lg ml-3">
+                                <i class="fas fa-chart-line text-yellow-300"></i>
+                            </div>
+                            <span>أكثر من 12 عاماً من الخبرة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center relative">
+                    <div class="relative scroll-animation">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="محاسب محترف" class="hero-image w-full max-w-lg floating glow">
+                        <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-2xl border border-gray-100 hover-lift">
+                            <div class="flex items-center">
+                                <div class="bg-green-100 text-green-600 p-3 rounded-xl ml-3">
+                                    <i class="fas fa-chart-line text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-black text-gray-800 counter" data-count="42">0</p>
+                                    <p class="text-gray-600">متوسط زيادة الأرباح</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 hover-lift">
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 text-blue-600 p-2 rounded-lg ml-2">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <p class="text-lg font-black text-gray-800 counter" data-count="300">0</p>
+                                    <p class="text-gray-600 text-sm">عميل راضٍ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الشركاء المحسن -->
+    <section class="py-16 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <p class="text-gray-600 font-medium">يثق بنا كبار الشركات والمؤسسات</p>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-70">
+                <div class="bg-white p-4 rounded-2xl shadow-md hover-lift">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="شركة 1" class="h-10">
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-md hover-lift">
+                    <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="شركة 2" class="h-10">
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-md hover-lift">
+                    <img src="https://images.unsplash.com/photo-1556655848-f3a704943a68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="شركة 3" class="h-10">
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-md hover-lift">
+                    <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="شركة 4" class="h-10">
+                </div>
+                <div class="bg-white p-4 rounded-2xl shadow-md hover-lift">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="شركة 5" class="h-10">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات المحسن -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 scroll-animation">
+                <h2 class="text-4xl font-black text-gray-800 mb-4 section-title">حلولنا <span class="text-gradient">المحاسبية المتكاملة</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">نقدم مجموعة شاملة من الخدمات المحاسبية والمالية التي تلبي متطلبات الشركات بمختلف تخصصاتها وأحجامها</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- خدمة 1 -->
+                <div class="flip-card h-96">
+                    <div class="flip-card-inner h-full rounded-2xl">
+                        <div class="flip-card-front bg-gradient-to-br from-white to-blue-50 rounded-2xl p-8 card-hover h-full">
+                            <div class="bg-blue-100 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 service-icon">
+                                <i class="fas fa-file-invoice-dollar text-3xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-800 mb-4">المحاسبة المالية المتكاملة</h3>
+                            <p class="text-gray-600 mb-6">إدارة شاملة للسجلات المالية وإعداد القوائم المالية وفقاً للمعايير المحاسبية المتعارف عليها وتحليل النتائج المالية لاتخاذ القرارات الاستراتيجية.</p>
+                            <div class="absolute bottom-8">
+                                <span class="text-blue-600 font-bold flex items-center">
+                                    انقر للتعرف أكثر
+                                    <i class="fas fa-sync-alt mr-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-2xl p-8 h-full">
+                            <h3 class="text-2xl font-black mb-4">المحاسبة المالية المتكاملة</h3>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>إمساك الدفاتر والسجلات المحاسبية</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>إعداد القوائم المالية الشهرية والسنوية</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>تسجيل المعاملات المالية بدقة متناهية</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>تحليل النتائج المالية والتقارير الدورية</span>
+                                </li>
+                            </ul>
+                            <div class="absolute bottom-8">
+                                <span class="text-yellow-300 font-bold flex items-center">
+                                    انقر للعودة
+                                    <i class="fas fa-sync-alt mr-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- خدمة 2 -->
+                <div class="flip-card h-96">
+                    <div class="flip-card-inner h-full rounded-2xl">
+                        <div class="flip-card-front bg-gradient-to-br from-white to-green-50 rounded-2xl p-8 card-hover h-full">
+                            <div class="bg-green-100 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 service-icon">
+                                <i class="fas fa-search-dollar text-3xl text-green-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-800 mb-4">المراجعة والتدقيق المالي</h3>
+                            <p class="text-gray-600 mb-6">فحص وتحليل البيانات المالية للتأكد من دقتها ومدى تطبيقها للمعايير والمبادئ المحاسبية المتعارف عليها وضمان شفافية الأداء المالي.</p>
+                            <div class="absolute bottom-8">
+                                <span class="text-blue-600 font-bold flex items-center">
+                                    انقر للتعرف أكثر
+                                    <i class="fas fa-sync-alt mr-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-green-600 to-green-800 text-white rounded-2xl p-8 h-full">
+                            <h3 class="text-2xl font-black mb-4">المراجعة والتدقيق المالي</h3>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>مراجعة القوائم المالية</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>مراجعة الأنظمة والضوابط الداخلية</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>إعداد تقارير المراجعة المعتمدة</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>التدقيق على الأنظمة المحاسبية</span>
+                                </li>
+                            </ul>
+                            <div class="absolute bottom-8">
+                                <span class="text-yellow-300 font-bold flex items-center">
+                                    انقر للعودة
+                                    <i class="fas fa-sync-alt mr-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- خدمة 3 -->
+                <div class="flip-card h-96">
+                    <div class="flip-card-inner h-full rounded-2xl">
+                        <div class="flip-card-front bg-gradient-to-br from-white to-purple-50 rounded-2xl p-8 card-hover h-full">
+                            <div class="bg-purple-100 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 service-icon">
+                                <i class="fas fa-balance-scale text-3xl text-purple-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-800 mb-4">الاستشارات الضريبية المتخصصة</h3>
+                            <p class="text-gray-600 mb-6">تقديم الاستشارات المتخصصة في مجال الضرائب والزامياتها والمساعدة في إعداد الإقرارات الضريبية والتمثيل أمام الهيئات الضريبية.</p>
+                            <div class="absolute bottom-8">
+                                <span class="text-blue-600 font-bold flex items-center">
+                                    انقر للتعرف أكثر
+                                    <i class="fas fa-sync-alt mr-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flip-card-back bg-gradient-to-br from-purple-600 to-purple-800 text-white rounded-2xl p-8 h-full">
+                            <h3 class="text-2xl font-black mb-4">الاستشارات الضريبية المتخصصة</h3>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>التخطيط الضريبي الاستراتيجي</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>إعداد الإقرارات الضريبية</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>التمثيل أمام الهيئات الضريبية</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-yellow-300 ml-2"></i>
+                                    <span>الاستشارات الضريبية المتقدمة</span>
+                                </li>
+                            </ul>
+                            <div class="absolute bottom-8">
+                                <span class="text-yellow-300 font-bold flex items-center">
+                                    انقر للعودة
+                                    <i class="fas fa-sync-alt mr-2"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 scroll-animation">
+                <a href="services.html" class="btn-primary text-white px-8 py-4 rounded-xl font-bold text-lg inline-flex items-center hover-lift">
+                    عرض جميع الخدمات
+                    <i class="fas fa-arrow-left mr-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم لماذا نحن المحسن -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 scroll-animation">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="فريق المحاسب الاستشاري" class="rounded-2xl shadow-2xl glow">
+                </div>
+                <div class="lg:w-1/2 lg:pr-12 scroll-animation">
+                    <h2 class="text-4xl font-black text-gray-800 mb-6 section-title">لماذا <span class="text-gradient">المحاسب الاستشاري</span>؟</h2>
+                    <p class="text-xl text-gray-600 mb-8">نحن نتميز بخبرة طويلة في مجال المحاسبة والمراجعة، مع فريق من المحاسبين المعتمدين الذين يقدمون حلولاً مالية مبتكرة تلبي احتياجات عملائنا.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start hover-lift p-4 rounded-xl transition-all duration-300">
+                            <div class="bg-blue-100 p-3 rounded-xl ml-4 flex-shrink-0">
+                                <i class="fas fa-award text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-800 mb-2">خبرة تزيد عن 12 عاماً</h3>
+                                <p class="text-gray-600">خبرة واسعة في مختلف القطاعات والأنشطة التجارية مع أكثر من 300 مشروع مكتمل بنجاح.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start hover-lift p-4 rounded-xl transition-all duration-300">
+                            <div class="bg-green-100 p-3 rounded-xl ml-4 flex-shrink-0">
+                                <i class="fas fa-users text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-800 mb-2">فريق من المحاسبين المعتمدين</h3>
+                                <p class="text-gray-600">فريق عمل مكون من محاسبين قانونيين ومراجعين معتمدين ومستشارين ضريبيين متخصصين.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start hover-lift p-4 rounded-xl transition-all duration-300">
+                            <div class="bg-purple-100 p-3 rounded-xl ml-4 flex-shrink-0">
+                                <i class="fas fa-rocket text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-gray-800 mb-2">استخدام أحدث التقنيات</h3>
+                                <p class="text-gray-600">نستخدم أحدث البرامج والتقنيات في مجال المحاسبة والمراجعة لضمان دقة وكفاءة الخدمات.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover-lift">
+                        <div class="flex items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="عميل" class="w-16 h-16 rounded-full ml-4 border-2 border-blue-500">
+                            <div>
+                                <h4 class="font-black text-gray-800">أحمد السعيد</h4>
+                                <p class="text-gray-600">مدير مالي - شركة التقنية المتطورة</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-700 italic">"لقد ساعدنا المحاسب الاستشاري في تنظيم سجلاتنا المالية بشكل ممتاز، مما ساهم في تحسين قراراتنا المالية وزيادة أرباحنا بنسبة 42% خلال عام واحد."</p>
+                        <div class="flex text-yellow-400 mt-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الإحصائيات المحسن -->
+    <section class="py-16 bg-gradient-to-r from-blue-800 to-blue-600 text-white parallax" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+        <div class="gradient-overlay py-16">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="stat-card rounded-2xl p-8">
+                        <div class="text-4xl md:text-5xl font-black mb-2 gold-text counter" data-count="12">0</div>
+                        <p class="text-blue-100">سنوات من الخبرة</p>
+                    </div>
+                    <div class="stat-card rounded-2xl p-8">
+                        <div class="text-4xl md:text-5xl font-black mb-2 gold-text counter" data-count="300">0</div>
+                        <p class="text-blue-100">عميل راضٍ</p>
+                    </div>
+                    <div class="stat-card rounded-2xl p-8">
+                        <div class="text-4xl md:text-5xl font-black mb-2 gold-text counter" data-count="650">0</div>
+                        <p class="text-blue-100">مشروع مكتمل</p>
+                    </div>
+                    <div class="stat-card rounded-2xl p-8">
+                        <div class="text-4xl md:text-5xl font-black mb-2 gold-text counter" data-count="18">0</div>
+                        <p class="text-blue-100">محاسب محترف</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عملية العمل المحسن -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 scroll-animation">
+                <h2 class="text-4xl font-black text-gray-800 mb-4 section-title">كيف <span class="text-gradient">نعمل</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">عملية منظمة وشفافة لضمان تقديم خدمات عالية الجودة تلبي توقعات عملائنا</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-8 text-center card-hover scroll-animation">
+                    <div class="process-number mx-auto">1</div>
+                    <h3 class="text-xl font-black text-gray-800 mb-3">التشخيص والتحليل</h3>
+                    <p class="text-gray-600">نقوم بتحليل دقيق لاحتياجاتك المالية والمحاسبية وتحديد المتطلبات الخاصة بعملك.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center card-hover scroll-animation" style="animation-delay: 0.2s;">
+                    <div class="process-number mx-auto">2</div>
+                    <h3 class="text-xl font-black text-gray-800 mb-3">التخطيط والتصميم</h3>
+                    <p class="text-gray-600">نصمم خطة عمل مفصلة تشمل الجدول الزمني والتكلفة والنتائج المتوقعة.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center card-hover scroll-animation" style="animation-delay: 0.4s;">
+                    <div class="process-number mx-auto">3</div>
+                    <h3 class="text-xl font-black text-gray-800 mb-3">التنفيذ والمتابعة</h3>
+                    <p class="text-gray-600">ننفذ الخطة بدقة مع متابعة مستمرة وتقديم تقارير دورية عن سير العمل.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center card-hover scroll-animation" style="animation-delay: 0.6s;">
+                    <div class="process-number mx-auto">4</div>
+                    <h3 class="text-xl font-black text-gray-800 mb-3">التقييم والدعم</h3>
+                    <p class="text-gray-600">نقيم النتائج ونقدم الدعم المستمر لضمان استمرارية التحسين والنمو.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم باقات الخدمات المحسن -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 scroll-animation">
+                <h2 class="text-4xl font-black text-gray-800 mb-4 section-title">باقات <span class="text-gradient">الخدمات</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">اختر الباقة المناسبة لشركتك من بين مجموعة باقاتنا المتنوعة والمصممة خصيصاً لمختلف الاحتياجات</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- باقة 1 -->
+                <div class="bg-white rounded-2xl p-8 pricing-card scroll-animation">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-black text-gray-800 mb-2">الباقة الأساسية</h3>
+                        <p class="text-gray-600">مناسبة للشركات الناشئة</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-black text-gray-800">1,499</span>
+                        <span class="text-gray-600">ر.س/شهرياً</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>إمساك الدفاتر اليومية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>إعداد القوائم المالية الشهرية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>تسجيل المعاملات المالية</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times ml-2"></i>
+                            <span>المراجعة والتدقيق</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times ml-2"></i>
+                            <span>الاستشارات الضريبية</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn-primary text-white w-full py-3 rounded-xl font-bold text-center block hover-lift">اختر الباقة</a>
+                </div>
+                
+                <!-- باقة 2 -->
+                <div class="bg-white rounded-2xl p-8 pricing-card popular scroll-animation">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-black text-gray-800 mb-2">الباقة المتكاملة</h3>
+                        <p class="text-gray-600">مناسبة للشركات المتوسطة</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-black text-gray-800">2,999</span>
+                        <span class="text-gray-600">ر.س/شهرياً</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>إمساك الدفاتر اليومية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>إعداد القوائم المالية الشهرية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>تسجيل المعاملات المالية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>المراجعة والتدقيق</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>الاستشارات الضريبية</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn-gold text-white w-full py-3 rounded-xl font-bold text-center block hover-lift">اختر الباقة</a>
+                </div>
+                
+                <!-- باقة 3 -->
+                <div class="bg-white rounded-2xl p-8 pricing-card scroll-animation">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-black text-gray-800 mb-2">الباقة المتقدمة</h3>
+                        <p class="text-gray-600">مناسبة للشركات الكبيرة</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-black text-gray-800">4,999</span>
+                        <span class="text-gray-600">ر.س/شهرياً</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>إمساك الدفاتر اليومية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>إعداد القوائم المالية الشهرية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>تسجيل المعاملات المالية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>المراجعة والتدقيق</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 ml-2"></i>
+                            <span>الاستشارات الضريبية والمحاسبية المتقدمة</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn-primary text-white w-full py-3 rounded-xl font-bold text-center block hover-lift">اختر الباقة</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المدونة المحسن -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 scroll-animation">
+                <h2 class="text-4xl font-black text-gray-800 mb-4 section-title">أحدث <span class="text-gradient">المقالات</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">اطلع على أحدث المقالات والنصائح في مجال المحاسبة والمالية والضرائب</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- مقال 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-hover shadow-lg border border-gray-100 scroll-animation">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="كيف تحسن التدفق النقدي" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-bold">نصائح مالية</span>
+                            <span class="text-gray-500 text-sm">15 مارس 2023</span>
+                        </div>
+                        <h3 class="text-xl font-black text-gray-800 mb-3">كيف تحسن التدفق النقدي لشركتك؟</h3>
+                        <p class="text-gray-600 mb-4">تعرف على الاستراتيجيات الفعالة لتحسين التدفق النقدي في شركتك وتجنب المشاكل المالية التي قد تواجهها.</p>
+                        <a href="blog.html" class="text-blue-600 font-bold flex items-center hover:text-blue-800 transition">
+                            اقرأ المزيد
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- مقال 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-hover shadow-lg border border-gray-100 scroll-animation" style="animation-delay: 0.2s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="الضرائب في السعودية" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-bold">الضرائب</span>
+                            <span class="text-gray-500 text-sm">10 مارس 2023</span>
+                        </div>
+                        <h3 class="text-xl font-black text-gray-800 mb-3">دليل شامل للضرائب في المملكة العربية السعودية</h3>
+                        <p class="text-gray-600 mb-4">كل ما تحتاج معرفته عن النظام الضريبي السعودي وآخر التحديثات والتعديلات.</p>
+                        <a href="blog.html" class="text-blue-600 font-bold flex items-center hover:text-blue-800 transition">
+                            اقرأ المزيد
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- مقال 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden card-hover shadow-lg border border-gray-100 scroll-animation" style="animation-delay: 0.4s;">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="التدقيق المالي" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-bold">التدقيق المالي</span>
+                            <span class="text-gray-500 text-sm">5 مارس 2023</span>
+                        </div>
+                        <h3 class="text-xl font-black text-gray-800 mb-3">أهمية التدقيق المالي للشركات الناشئة</h3>
+                        <p class="text-gray-600 mb-4">لماذا تحتاج الشركات الناشئة إلى تدقيق مالي منتظم وكيف يمكن أن يساعد في نموها.</p>
+                        <a href="blog.html" class="text-blue-600 font-bold flex items-center hover:text-blue-800 transition">
+                            اقرأ المزيد
+                            <i class="fas fa-arrow-left mr-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 scroll-animation">
+                <a href="blog.html" class="btn-primary text-white px-8 py-4 rounded-xl font-bold text-lg inline-flex items-center hover-lift">
+                    عرض جميع المقالات
+                    <i class="fas fa-arrow-left mr-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم اتصل بنا المحسن -->
+    <section class="py-16 bg-gradient-to-r from-blue-800 to-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col lg:flex-row justify-between items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 scroll-animation">
+                    <h2 class="text-4xl font-black mb-4">هل تحتاج إلى استشارة محاسبية متخصصة؟</h2>
+                    <p class="text-xl text-blue-100 max-w-2xl">لا تتردد في التواصل معنا، نحن هنا لمساعدتك في جميع احتياجاتك المحاسبية والمالية. اطلب استشارة مجانية الآن!</p>
+                </div>
+                <div class="lg:w-1/2 flex justify-center lg:justify-end scroll-animation" style="animation-delay: 0.2s;">
+                    <a href="contact.html" class="btn-gold text-white px-10 py-5 rounded-2xl font-black text-xl inline-flex items-center hover-lift">
+                        <i class="fas fa-phone-alt ml-3"></i>
+                        اتصل بنا الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل المحسن -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="scroll-animation">
+                    <div class="flex items-center space-x-2 space-x-reverse mb-6">
+                        <div class="gold-gradient text-white p-3 rounded-xl glow">
+                            <i class="fas fa-balance-scale text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-2xl font-black">المحاسب</span><br>
+                            <span class="gold-text font-bold">الاستشاري</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">نقدم خدمات محاسبية ومالية متكاملة بجودة عالية واحترافية تامة لتلبية احتياجات عملائنا وتحقيق أهدافهم المالية.</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="bg-gray-800 text-gray-300 p-3 rounded-xl hover:bg-blue-600 hover:text-white transition hover-lift">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 text-gray-300 p-3 rounded-xl hover:bg-blue-600 hover:text-white transition hover-lift">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 text-gray-300 p-3 rounded-xl hover:bg-blue-600 hover:text-white transition hover-lift">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="scroll-animation" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl font-black mb-6">روابط سريعة</h3>
+                    <ul class="space-y-4 footer-links">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">من نحن</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">خدماتنا</a></li>
+                        <li><a href="solutions.html" class="text-gray-400 hover:text-white transition">الحلول</a></li>
+                        <li><a href="cases.html" class="text-gray-400 hover:text-white transition">دراسات الحالة</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition">المدونة</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="scroll-animation" style="animation-delay: 0.4s;">
+                    <h3 class="text-xl font-black mb-6">خدماتنا</h3>
+                    <ul class="space-y-4 footer-links">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">المحاسبة المالية</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">المراجعة والتدقيق</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">الاستشارات الضريبية</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">إعداد الميزانيات</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">التحليل المالي</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition">الاستشارات المالية</a></li>
+                    </ul>
+                </div>
+                
+                <div class="scroll-animation" style="animation-delay: 0.6s;">
+                    <h3 class="text-xl font-black mb-6">اتصل بنا</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-400 ml-3"></i>
+                            الرياض، المملكة العربية السعودية
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-blue-400 ml-3"></i>
+                            +966 55 123 4567
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 ml-3"></i>
+                            info@accountant.com
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 bg-gray-800 rounded-2xl p-6 hover-lift">
+                        <h4 class="font-black mb-3">النشرة البريدية</h4>
+                        <p class="text-gray-400 text-sm mb-4">اشترك لتصلك آخر المقالات والنصائح</p>
+                        <div class="flex">
+                            <input type="email" placeholder="بريدك الإلكتروني" class="bg-gray-700 text-white rounded-r-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button class="bg-blue-600 text-white px-4 py-3 rounded-l-lg hover:bg-blue-700 transition">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>جميع الحقوق محفوظة &copy; 2023 المحاسب الاستشاري</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // تفعيل القائمة المنسدلة للموبايل
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // تأثيرات التمرير السلس للروابط
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // تأثيرات عند التمرير
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.classList.add('sticky-nav');
+                } else {
+                    nav.classList.remove('sticky-nav');
+                }
+                
+                // تفعيل تأثيرات الظهور عند التمرير
+                const scrollElements = document.querySelectorAll('.scroll-animation');
+                scrollElements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.classList.add('active');
+                    }
+                });
+            });
+            
+            // تفعيل عداد الأرقام
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    
+                    const inc = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCount();
+            });
+        });
+    </script>
+</body>
+</html>

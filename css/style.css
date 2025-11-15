@@ -1,0 +1,35 @@
+/* إضافة تخصيصات إضافية إذا لزم الأمر */
+.rtl {
+    direction: rtl;
+}
+
+/* تحسينات للعرض على الأجهزة المحمولة */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 4rem 0;
+    }
+}
+
+/* تأثيرات للروابط والزرور */
+.btn-primary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* تأثيرات للأسئلة الشائعة */
+.rotate-180 {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+/* تحسينات للنماذج */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3b82f6;
+    border-color: transparent;
+}
